@@ -10,10 +10,15 @@ Extract the tarball and edit build.templ as follows: Set PREFIX:
 
 PREFIX=/usr
 SUDO="sudo"
+
 Select Packages:
+
 export DISABLE_PKGS="ssl odbc xpce zlib"
+
 Additional packages may be disabled (as long as JPL stays enabled, of course) or any of the 4 above may be enabled. However xpce and zlib are known to cause problems in some environments and are not needed for naproche anyway. And create a shared library. Add:
+
 EXTRACFG+=" --enable-shared"
+
 Make sure every one of the options above is uncommented.
 
 Then run build.templ. (Despite setting SUDO in most cases the script needs to be called as root)
